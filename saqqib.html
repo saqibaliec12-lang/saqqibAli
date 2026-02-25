@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 Section Animated Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* Navigation */
+nav{
+    position:fixed;
+    width:100%;
+    background:#111827;
+    padding:15px 0;
+    text-align:center;
+    z-index:1000;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    position:relative;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#38bdf8;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Sections */
+section{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:80px 20px;
+    text-align:center;
+    animation:fadeSlide 1.5s ease;
+}
+
+h1{
+    font-size:40px;
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+p{
+    max-width:600px;
+    margin-bottom:20px;
+}
+
+/* Buttons */
+.btn{
+    padding:12px 25px;
+    background:#38bdf8;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    transform:scale(1.1);
+}
+
+/* Project Cards */
+.projects{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:#1e293b;
+    padding:20px;
+    width:250px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    background:#334155;
+}
+
+/* Contact */
+input, textarea{
+    width:300px;
+    padding:10px;
+    margin:8px 0;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    padding:10px 20px;
+    background:#38bdf8;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    transform:scale(1.1);
+}
+
+/* Animation */
+@keyframes fadeSlide{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Section Colors */
+#home{background:#0f172a;}
+#about{background:#1e293b;}
+#projects{background:#0f172a;}
+#contact{background:#1e293b;}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h1>John Doe</h1>
+    <p>Web Developer | UI Designer | Freelancer</p>
+    <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h1>About Me</h1>
+    <p>I am a passionate front-end developer who builds modern, responsive, and animated websites using HTML and CSS.</p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h1>My Projects</h1>
+    <div class="projects">
+        <div class="card">
+            <h3>Business Website</h3>
+            <p>Responsive company website design.</p>
+        </div>
+        <div class="card">
+            <h3>E-commerce Store</h3>
+            <p>Modern online store landing page.</p>
+        </div>
+        <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>Personal animated portfolio project.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h1>Contact Me</h1>
+    <form>
+        <input type="text" placeholder="Your Name" required><br>
+        <input type="email" placeholder="Your Email" required><br>
+        <textarea rows="4" placeholder="Your Message" required></textarea><br>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+</body>
+</html>
